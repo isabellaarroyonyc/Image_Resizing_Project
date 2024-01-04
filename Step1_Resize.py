@@ -15,19 +15,7 @@ new_size = (512, 512)  # Change these values to your desired dimensions
 
 # List of input image file names
 input_image_files = [
-    "IMG_6022.jpeg",
-    "IMG_6023.jpeg",
-    "IMG_6024.jpeg",
-    "IMG_6025.jpeg",
-    "IMG_6026.jpeg",
-    "IMG_6027.jpeg",
-    "IMG_6028.jpeg",
-    "IMG_6029.jpeg",
-    "IMG_6030.jpeg",
-    "IMG_6031.jpeg",
-    "IMG_6032.jpeg",
-    "IMG_6033.jpeg",
-    "IMG_6034.jpeg",
+
     "IMG_6036.jpeg",
 ]
 
