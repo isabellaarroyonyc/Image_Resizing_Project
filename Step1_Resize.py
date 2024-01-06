@@ -2,10 +2,10 @@ from PIL import Image
 import os
 
 # Define the directory containing the input images
-input_directory = "/Users/isabellaarroyo/Desktop/Sample_Earring/Raw"
+input_directory = "/Users/isabellaarroyo/Desktop/Image_Resizing_Project/Final_Wines"
 
 # Define the directory to save the resized images
-output_directory = "/Users/isabellaarroyo/Desktop/Sample_Earring/Resized_512_x_512"
+output_directory = "/Users/isabellaarroyo/Desktop/Sample_Earring/Image_Resizing_Project/Test_Step1_Resize"
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
@@ -15,13 +15,13 @@ new_size = (512, 512)  # Change these values to your desired dimensions
 
 # List of input image file names
 input_image_files = [
-    "DSC_0002.JPG"
-    "DSC_0003.JPG"
-    "DSC_0004.JPG"
-    "DSC_0005.JPG"
-    "DSC_0006.JPG"
-    "DSC_0007.JPG"
-    "DSC_0008.JPG"
+    "DSC_0002.JPG",
+    "DSC_0003.JPG",
+    "DSC_0004.JPG",
+    "DSC_0005.JPG",
+    "DSC_0006.JPG",
+    "DSC_0007.JPG",
+    "DSC_0008.JPG",
     ]
 
 # Loop through the input image files and resize each one

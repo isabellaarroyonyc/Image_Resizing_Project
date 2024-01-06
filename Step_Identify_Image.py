@@ -2,6 +2,7 @@ import cv2
 from PIL import Image
 import numpy as np
 import os
+import pdb
 
 def find_center_of_contour(contour):
     """Find the center of a given contour."""
@@ -13,9 +14,9 @@ def find_center_of_contour(contour):
         cX, cY = 0, 0
     return cX, cY
 
-def center_and_crop_image(image_path):
+def center_and_crop_image(direct_image_path):
     # Read the image
-    img = cv2.imread(image_path)
+    img = cv2.imread(direct_image_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
 
@@ -45,25 +46,53 @@ def center_and_crop_image(image_path):
     return pil_img
 
 # Define the directory containing the input images
-input_directory = "/Users/isabellaarroyo/Desktop/Final_Wines"
+input_directory = "/Users/isabellaarroyo/Desktop/Image_Resizing_Project/Final_Wines"
 
 # Define the directory to save the centered images
-output_directory = "/Users/isabellaarroyo/Desktop/Test2ResizedWine"
+output_directory = "/Users/isabellaarroyo/Desktop/Image_Resizing_Project/Test2ResizedWine"
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)
 
 # List of input image file names
 input_image_files = [
-    "DSC_0002.JPG"
-    "DSC_0003.JPG"
-    "DSC_0004.JPG"
-    "DSC_0005.JPG"
-    "DSC_0006.JPG"
-    "DSC_0007.JPG"
-    "DSC_0008.JPG"
+    "DSC_0002.JPG",
+    "DSC_0003.JPG",
+    "DSC_0004.JPG",
+    "DSC_0005.JPG",
+    "DSC_0006.JPG",
+    "DSC_0007.JPG",
+    "DSC_0008.JPG",
     ]
 
+
+# Loop through the input image files and resize each one
+for input_image_file in input_image_files:
+    # Open the input image file
+    # pdb.set_trace()
+    input_image_path = os.path.join(input_directory, input_image_file)
+    print("Image path: " + input_image_path)
+
+    # Close the original and resized images
+    image = Image.open(input_image_path)
+
+    # Use the function on an image
+    centered_image = center_and_crop_image(input_image_path)
+    centered_image.show()
+
+    # Define the output file path
+    output_image_path = os.path.join(output_directory, input_image_file)
+
+    # Save the resized image to the output file path
+    centered_image.save(output_image_path)
+
+    
+    image.close()
+    
+
+print("Centering and Resizing complete.")
+
+
 # Use the function on an image
-centered_image = center_and_crop_image("DSC_0002.JPG")
-centered_image.show()
+# centered_image = center_and_crop_image("Final_Wines/DSC_0003.JPG")
+# centered_image.show()
